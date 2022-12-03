@@ -1,5 +1,5 @@
 #include "window.h"
-//#include "functions.h"
+//#include "functions.h" //CODE_REVIEW: Delete commented code
 #include <fenv.h>
 
 #include <QApplication>
@@ -43,9 +43,9 @@ int parse_arg (int argc, char *argv[], double &a, double &b, unsigned int &n, in
     {
       printf ("INPUT ERROR   : k is nonegative integer number less then 7\n"
               "your input is : k = %s\n", argv[4]);
-      return -5;
+      return -5; //CODE_REVIEW: Same return code as in case above.
     }
-  //printf ("k = %u\n", k);
+  //printf ("k = %u\n", k); //CODE_REVIEW: Delete commented code
   return 0;
 }
 
@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
 
   feenableexcept (FE_DIVBYZERO | FE_INVALID | FE_OVERFLOW| FE_UNDERFLOW);
 
-  if (int res = parse_arg (argc, argv, a, b, n, k); res < 0)
+  if (int res = parse_arg (argc, argv, a, b, n, k); res < 0) //CODE_REVIEW: Check result of calling parse_arg: if (parse_arg (..) < 0)
     {
       return 0;
     }

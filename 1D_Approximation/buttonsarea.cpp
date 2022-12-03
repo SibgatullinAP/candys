@@ -12,6 +12,8 @@ InfoWindow::InfoWindow (ApproxFunx *F_arg, Information *info_arg, QWidget *paren
 
 void InfoWindow::paintEvent (QPaintEvent */*event*/)
 {
+  //CODE_REVIEW: Delete commented code
+
   QPainter painter (this);
   //QFont info_font ("Times", 10, QFont::Bold);
   QPen info_pen (Qt::white, 0, Qt::DashLine, Qt::RoundCap, Qt::RoundJoin);

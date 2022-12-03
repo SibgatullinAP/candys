@@ -49,7 +49,7 @@ void MainWindow::plus_eps ()
 
   Pf.build_approx_func_Pf1 (info.n, EPS * info.p * info.global_abs_max_f_on_ab);
   Pf.build_approx_func_Pf2 (info.n, EPS * info.p * info.global_abs_max_f_on_ab);
-  //printf ("Epsilon is %25.18f\n", EPS * info.p * info.global_abs_max_f_on_ab);
+  //printf ("Epsilon is %25.18f\n", EPS * info.p * info.global_abs_max_f_on_ab); //CODE_REVIEW: Delete commented code
   set_residual ();
   set_local_max ();
   graph->update ();
@@ -187,7 +187,7 @@ void MainWindow::change_func ()
 void MainWindow::connect_buttons (ButtonsArea *buttons)
 {
   QAction action;
-  // chane_func
+  // chane_func //CODE_REVIEW: Typo?
   connect (buttons->change_func, &QPushButton::clicked, this, &MainWindow::change_func);
   QShortcut *cf_0 = new QShortcut (QKeySequence (tr ("0")), this);
   connect (cf_0, &QShortcut::activated, this, &MainWindow::change_func);

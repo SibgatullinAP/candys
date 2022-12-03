@@ -1,5 +1,8 @@
 #include "functions.h"
 
+
+//CODE_REVIEW: Function below can be written in line;
+
 unsigned int get_next_func_id (unsigned int k)
 {
   return (k >= NUM_OF_FUNC - 1 ? 0 : k + 1);

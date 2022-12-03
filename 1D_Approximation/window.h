@@ -22,8 +22,8 @@ class MainWindow : public QWidget
   Q_OBJECT
 
 private:
-  GraphArea *graph = nullptr;
-  ButtonsArea *buttons = nullptr;
+  GraphArea *graph = nullptr;  //CODE_REVIEW: Which class is the owner for graph ?
+  ButtonsArea *buttons = nullptr; //CODE_REVIEW: Which class is the owner for buttons ?
   Information info;
   ApproxFunx Pf;
   unsigned int start_n = 0;

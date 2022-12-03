@@ -56,6 +56,7 @@ public:
   int zoom = 1;
   unsigned int n = 0;
 
+  //CODE_REVIEW: Change type to static constexpr
   double MAX = std::numeric_limits <double>::max ();
   double MIN = -MAX;
 
@@ -75,22 +76,24 @@ public:
   unsigned int paint_Dis1 = 1;
   unsigned int paint_Dis2 = 1;
 
-  int graph_id = 0;
+  int graph_id = 0; //CODE_REVIEW: Maybe it's better to use enum class instead of int ?
 
 
   Information (double a_arg, double b_arg, unsigned int n_arg, int func_id_arg);
   void set_graph_mode (unsigned int graph_id);
 };
 
+
+//CODE_REVIEW: Add const quailifiers to class fuctions?
 class ApproxFunx
 {
 private:
   double a;
   double b;
   double h = 0;
-  const char *f_name;
-  double (*f) (double);
-  double (*df) (double);
+  const char *f_name;    //CODE_REVIEW: How is the owner of this data? Maybe it's better to use std::strings ?
+  double (*f) (double);  //CODE_REVIEW: Maybe it's better to use std::function ?
+  double (*df) (double); //CODE_REVIEW: Maybe it's better to use std::function ?
   unsigned int number_of_nodes_Pf1;
   unsigned int number_of_nodes_Pf2;
   // Pf

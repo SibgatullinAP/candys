@@ -17,8 +17,8 @@ class InfoWindow : public QWidget
   Q_OBJECT
 
 private:
-  Information *info;
-  ApproxFunx *F;
+  Information *info; //CODE_REVIEW: Which class is the owner for info ?
+  ApproxFunx *F; //CODE_REVIEW: Which class is the owner for F ?
 
 public:
   InfoWindow (ApproxFunx *F_arg = nullptr, Information *info = nullptr, QWidget *parent = nullptr);

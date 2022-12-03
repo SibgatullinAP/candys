@@ -18,6 +18,9 @@ void GraphArea::correcting_min_max (double &min_y, double &max_y)
       min_y = -5;
       max_y = 5;
     }
+
+  //CODE_REVIEW: Delete commented code
+
   // if you wan't to see axis X always
   /*
   if (eq (min_y, max_y))
@@ -89,6 +92,7 @@ void GraphArea::paint_graph (QPainter &painter, double (ApproxFunx::*Pf) (double
 
   const double delta_x = (b - a) / width ();
 
+  //CODE_REVIEW: Delete commented code
   //if (color == Qt::darkBlue) printf ("starte DARKBLUE\n");
   //if (color == Qt::darkYellow) printf ("starte DARKYellow\n");
   double x1 = a;
@@ -97,6 +101,8 @@ void GraphArea::paint_graph (QPainter &painter, double (ApproxFunx::*Pf) (double
     {
       double x2 = a + i * delta_x;
       double y2 = (F->*Pf) (x2);
+
+      //CODE_REVIEW: Delete commented code
       //printf ("x1 = %e, y1 = %e, x2 = %e, y2 = %e\n", x1, y1, x2, y2);
       //printf ("tut\n");
       painter.drawLine (QPointF (x1, y1), QPointF (x2, y2));
